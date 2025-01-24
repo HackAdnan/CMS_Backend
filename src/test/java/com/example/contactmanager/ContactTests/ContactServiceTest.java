@@ -76,7 +76,7 @@ class ContactServiceTest
     @Test
     void testCreateContact_Success() {
         long id = 999;
-        User mockUser = new User("Shaheer", "Alam", "shaheeralam.alam@gmail.com", "hashedPassword");
+        User mockUser = new User("Adnan", "Sajid", "adnansajid877@gmail.com", "hashedPassword");
         ContactDetails mockContactDetails = new ContactDetails(
                 "John",
                 "Doe",
