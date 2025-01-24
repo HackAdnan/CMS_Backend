@@ -43,7 +43,7 @@ class UserServiceTest
     @Test
     void getUserDataTest() {
         long id = 123;
-        User user = new User("Shaheer", "Alam", "shaheeralam.alam@gmail.com", "Shaheer.123");
+        User user = new User("Adnan", "Sajid", "adnansajid877@gmail.com", "adnan123");
 
         when(userRepository.findById(id)).thenReturn(Optional.of(user));
 
@@ -54,7 +54,7 @@ class UserServiceTest
     @Test
     void testCreateUser_Success() {
         // Arrange
-        User user = new User("Shaheer", "Alam", "shaheeralam.alam@gmail.com", "Shaheer.123");
+        User user = new User("Adnan", "Sajid", "adnansajid877@gmail.com", "adnan123");
         String hashedPassword = "hashedPassword123";
 
         when(userRepository.findByEmail(user.getEmail())).thenReturn(Optional.empty());
@@ -74,8 +74,8 @@ class UserServiceTest
     @Test
     void testVerifyUser_SuccessfulLogin() {
         // Arrange
-        String email = "shaheeralam.alam@gmail.com";
-        String password = "Shaheer.123";
+        String email = "adnansajid877@gmail.com";
+        String password = "adnan123";
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String hashedPassword = encoder.encode(password);
         String generatedToken = "myJwtToken";
@@ -102,7 +102,7 @@ class UserServiceTest
         String password = "wrongPassword";
         String hashedPassword = "hashedPassword123";
 
-        User user = new User("Shaheer", "Alam", email, hashedPassword);
+        User user = new User("Adnan", "Sajid", email, hashedPassword);
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
         when(passwordEncoder.matches(password, hashedPassword)).thenReturn(false);
