@@ -80,7 +80,7 @@ class UserServiceTest
         String hashedPassword = encoder.encode(password);
         String generatedToken = "myJwtToken";
 
-        User user = new User("Shaheer", "Alam", email, hashedPassword);
+        User user = new User("Adnan", "Sajid", email, hashedPassword);
 
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
@@ -98,7 +98,7 @@ class UserServiceTest
     @Test
     void testVerifyUser_IncorrectPassword() {
         // Arrange
-        String email = "shaheeralam.alam@gmail.com";
+        String email = "adnansajid877@gmail.com";
         String password = "wrongPassword";
         String hashedPassword = "hashedPassword123";
 
